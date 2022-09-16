@@ -3,7 +3,8 @@
 3)Search
 4)Nodes
 5)Inserion:i)beginning ii)end iii)position iv)before node v)after node
-6)Deletion:i)beginning ii)end iii)position iv)before node v)after node*/
+6)Deletion:i)beginning ii)end iii)position iv)before node v)after node
+7)Reverse*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -241,11 +242,23 @@ void deleteanode()
         free(ptr);
     }
 }
+void reverse()
+{
+    struct node* curr=head,*prev=NULL,*next=NULL;
+    while(curr!=NULL)
+    {
+        next=curr->next;
+        curr->next=prev;
+        prev=curr;
+        curr=next;
+    }
+    head=prev;
+}
 int main()
 {
     int ch,po;
     while(ch){
-    printf("\n1)Creation 2)Traversal 3)Insertion 4)Deletion 5)Search 6)Count");
+    printf("\n1)Creation 2)Traversal 3)Insertion 4)Deletion 5)Search 6)Count 7)Reverse");
     scanf("%d",&ch);
     switch(ch)
     {
@@ -305,6 +318,9 @@ int main()
         break;
         case 6:
         count();
+        break;
+        case 7:
+        reverse();
         break;
         default:
         printf("\nInvalid choice");
