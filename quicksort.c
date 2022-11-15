@@ -1,9 +1,8 @@
+//generate random nos in a file,use that file for input and quicksort array in another file.
+
 #include<stdio.h>
 #include<stdlib.h>
 #include<time.h>
-
-
-
 
 
 void quickSort(int arr[], int start, int end)
